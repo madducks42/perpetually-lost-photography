@@ -12,5 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require lightbox
 //= require navmenu
 //= require_tree .
