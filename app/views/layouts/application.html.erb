@@ -10,8 +10,8 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
           <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
@@ -57,6 +57,10 @@
     </nav>
     
     <%= yield %>
+
+    <footer class="has-text-centered footer">
+      <h3>&copy; Perpetually Lost Photography</h3>
+    </footer>
     
     <%- if Rails.env.development? || Rails.env.test? -%> 
       <%= javascript_tag do %>

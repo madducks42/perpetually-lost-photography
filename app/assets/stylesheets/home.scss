@@ -1,0 +1,14 @@
+// Homepage Style
+
+.landing-image {
+  background-image: url("https://perpetually-lost-prod.s3.amazonaws.com/landing_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+.profile-image {
+  max-height: 600px;
+}
