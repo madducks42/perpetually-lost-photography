@@ -20,5 +20,5 @@
   },
   "scripts": {
     "start": "./bin/webpack-dev-server"
-    }
+  }
 }
