@@ -10,9 +10,60 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="/">
+        <img src="/images/logo.png">
+      </a>
+      <a class="navbar-item logo-name" href="/">
+        <img src="/images/logo-name.png">
+      </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-size-4">
+              Galleries
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item is-size-4">
+                Costa Rica
+              </a>
+              <a class="navbar-item is-size-4">
+                National Parks
+              </a>
+              <a class="navbar-item is-size-4">
+                Northeast
+              </a>
+            </div>
+          </div>
+
+          <a class="navbar-item is-size-4">
+            Perpetually Lost Shop
+          </a>
+
+          <a class="navbar-item is-size-4">
+            Contact
+          </a>
+
+        </div>
+      </div>
+    </nav>
     
     <%= yield %>
+
+    <footer class="has-text-centered footer">
+      <h4 class="is-size-4">&copy; Perpetually Lost Photography</h4>
+    </footer>
     
     <%- if Rails.env.development? || Rails.env.test? -%> 
       <%= javascript_tag do %>

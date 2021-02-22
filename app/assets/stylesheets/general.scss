@@ -1,0 +1,49 @@
+// Color Scheme
+.color-bg-white {
+  background-color: #f7f9fb;
+}
+
+.color-bg-black {
+  background-color: #101419;
+}
+
+.color-bg-grey {
+  background-color: #dadde6;
+}
+
+.color-bg-blue {
+  background-color: #102e5a;
+}
+
+.color-bg-lt-blue {
+  background-color: #4f83a5;
+}
+
+.color-bg-purple {
+  background-color: #54428e;
+}
+
+// General Page Setup
+html {
+  font-size: 62.5%;
+  height: 100%;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+}
+
+body {
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.4em;
+  color: #101419;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+  width: 100%;
+}
