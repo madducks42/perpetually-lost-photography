@@ -13,9 +13,12 @@
   <body class="has-navbar-fixed-top">
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-        </a>
+        <a class="navbar-item logo" href="/">
+        <img src="/images/logo.png">
+      </a>
+      <a class="navbar-item logo-name" href="/">
+        <img src="/images/logo-name.png">
+      </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
@@ -27,28 +30,28 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
+            <a class="navbar-link is-size-4">
               Galleries
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <a class="navbar-item is-size-4">
                 Costa Rica
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item is-size-4">
                 National Parks
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item is-size-4">
                 Northeast
               </a>
             </div>
           </div>
 
-          <a class="navbar-item">
+          <a class="navbar-item is-size-4">
             Perpetually Lost Shop
           </a>
 
-          <a class="navbar-item">
+          <a class="navbar-item is-size-4">
             Contact
           </a>
 
@@ -59,7 +62,7 @@
     <%= yield %>
 
     <footer class="has-text-centered footer">
-      <h3>&copy; Perpetually Lost Photography</h3>
+      <h4 class="is-size-4">&copy; Perpetually Lost Photography</h4>
     </footer>
     
     <%- if Rails.env.development? || Rails.env.test? -%> 

@@ -15,16 +15,19 @@
  */
 
  // Header Overrides
-$navbar-background-color: #00B4D8;
+$navbar-background-color: #f7f9fb;
 $navbar-height: 10rem;
 $navbar-item-img-max-height: 8rem;
-$navbar-item-color: #f7f9fb;
-$navbar-item-hover-color: #f7f9fb;
-$navbar-item-hover-background-color: #ea3546;
-$navbar-dropdown-background-color: #00B4D8;
+$navbar-item-color: #102e5a;
+$navbar-item-hover-color: #102e5a;
+$navbar-item-hover-background-color: #f7f9fb;
+$navbar-dropdown-background-color: #f7f9fb;
+
+// Body Overrides
+$body-background-color: #dadde6;
 
 // Footer Overrides
-$footer-background-color: #00B4D8;
+$footer-background-color: #f7f9fb;
 $footer-color: true;
 $footer-padding: 2rem;
 

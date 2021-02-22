@@ -7,16 +7,20 @@
   background-color: #101419;
 }
 
+.color-bg-grey {
+  background-color: #dadde6;
+}
+
 .color-bg-blue {
-  background-color: #00B4D8;
+  background-color: #102e5a;
+}
+
+.color-bg-lt-blue {
+  background-color: #4f83a5;
 }
 
 .color-bg-purple {
-  background-color: #52489c;
-}
-
-.color-bg-red {
-  color: #ea3546;
+  background-color: #54428e;
 }
 
 // General Page Setup
@@ -29,7 +33,6 @@ html {
 }
 
 body {
-  background-color: white;
   font-family: "Source Serif Pro", serif;
   font-size: 1.4em;
   color: #101419;
