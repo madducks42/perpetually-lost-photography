@@ -54,3 +54,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "bulma-rails", "~> 0.8.0"
+gem 'jquery-rails', '~> 4.4'
