@@ -16,7 +16,6 @@ export const CostaRica = () => {
   }
 
   let imageTiles = images.map((image) => {
-    // debugger
     return (
       <ImageTile
         key={image.id}
