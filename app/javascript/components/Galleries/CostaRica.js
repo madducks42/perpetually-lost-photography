@@ -8,6 +8,7 @@ export const CostaRica = () => {
   for (let i = 1; i < 110; i++) {
     let image = {
       id: i,
+      name: "costa-rica",
       fullSize: `https://perpetually-lost-prod.s3.amazonaws.com/costa-rica/FullSize/costarica-${i}.jpg`,
       thumbnail: `https://perpetually-lost-prod.s3.amazonaws.com/costa-rica/Thumbnails/costarica-thumbnail-${i}.jpg`
     }
@@ -20,6 +21,7 @@ export const CostaRica = () => {
       <ImageTile
         key={image.id}
         id={image.id}
+        name={image.name}
         fullSize={image.fullSize}
         thumbnail={image.thumbnail}
       />
