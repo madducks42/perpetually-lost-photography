@@ -1,0 +1,32 @@
+// Images Tiles Style
+
+//This container is located in the parent component of Image Tile
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: mg-sm;
+}
+
+// Responsive Tile
+@media screen and (min-width: 641px){
+  .card {
+    width: 28em;
+    height: auto;
+  }
+  
+  .card img {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .card {
+    width: 20em;
+    height: auto;
+  }
+  
+  .card img {
+    overflow: hidden;
+  }
+
+}

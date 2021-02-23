@@ -5,12 +5,23 @@ export const ImageTile = (props) => {
   let thumbnail = props.thumbnail
   
   return (
-    <div>
-      <a href={fullSize} data-lightbox="costa-rica" >
-        <img className ="gallery-image" src={thumbnail}alt="Campground"/>
-      </a>
+    <div class="card m-sm">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <a href={fullSize} data-lightbox="costa-rica" >
+            <img className ="gallery-image" src={thumbnail}alt="Campground"/>
+        </a>
+        </figure>
+      </div>
     </div>
   )
 }
 
 export default ImageTile
+
+{/* <div>
+      <a href={fullSize} data-lightbox="costa-rica" >
+        <img className ="gallery-image" src={thumbnail}alt="Campground"/>
+      </a>
+    </div> */}
+

@@ -5,10 +5,10 @@ import ImageTile from "../Utilities/ImageTile"
 export const CostaRica = () => {
   let images = []
 
-  for (let i = 1; i < 10; i++) {
+  for (let i = 1; i < 110; i++) {
     let image = {
       id: i,
-      fullSize: `https://perpetually-lost-prod.s3.amazonaws.com/costa-rica/costarica-${i}.jpg`,
+      fullSize: `https://perpetually-lost-prod.s3.amazonaws.com/costa-rica/FullSize/costarica-${i}.jpg`,
       thumbnail: `https://perpetually-lost-prod.s3.amazonaws.com/costa-rica/Thumbnails/costarica-thumbnail-${i}.jpg`
     }
     images.push(image)
@@ -26,10 +26,10 @@ export const CostaRica = () => {
     );
   });
   return (
-    <div className="container">
-      <div className="flex-row">
+    <div className="container is-widescreen">
+      <div className="images-container"> 
         {imageTiles}
-      </div>
+      </div>  
     </div>
   )
 }
