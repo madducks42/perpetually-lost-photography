@@ -1,6 +1,7 @@
 import React from "react";
 
 import ImageTile from "../Utilities/ImageTile"
+import { randomizeImages } from "../Utilities/RandomizeImages"
 
 export const Northeast = () => {
   let images = []
@@ -14,6 +15,8 @@ export const Northeast = () => {
     }
     images.push(image)
   }
+
+  randomizeImages(images)
 
   let imageTiles = images.map((image) => {
     return (
