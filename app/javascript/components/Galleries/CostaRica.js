@@ -1,6 +1,7 @@
 import React from "react";
 
 import ImageTile from "../Utilities/ImageTile"
+import { randomizeImages } from "../Utilities/RandomizeImages"
 
 export const CostaRica = () => {
   let images = []
@@ -15,6 +16,8 @@ export const CostaRica = () => {
     images.push(image)
   }
 
+  randomizeImages(images)
+  
   let imageTiles = images.map((image) => {
     return (
       <ImageTile
@@ -26,6 +29,7 @@ export const CostaRica = () => {
       />
     );
   });
+
   return (
     <div className="container is-widescreen">
       <div className="images-container"> 
