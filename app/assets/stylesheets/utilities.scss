@@ -5,6 +5,7 @@
 // Generic Flexblox Style
 .flex-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   align-items: center;
@@ -40,14 +41,4 @@
 .image-lg {
   width: 90%;
   height: auto;
-}
-
-// Link style
-.guide-link {
-  border-bottom: 5px solid #adb5bd;
-  margin-bottom: 10px;
-}
-
-.article-link {
-  text-decoration: underline;
 }

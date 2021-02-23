@@ -2,4 +2,8 @@
 
 Rails.application.routes.draw do
   root 'homepages#index'
+
+  get '/costa-rica', to: 'homepages#index'
+  get '/national-parks', to: 'homepages#index'
+  get '/northeast', to: 'homepages#index'
 end
