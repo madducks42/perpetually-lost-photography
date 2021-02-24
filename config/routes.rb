@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   get '/national-parks', to: 'homepages#index'
   get '/northeast', to: 'homepages#index'
   get '/blog', to: 'homepages#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :blogs, only: [:index, :show, :edit, :update, :destroy]
+    end
+  end
 end
