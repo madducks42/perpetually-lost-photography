@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_234737) do
     t.string "title", null: false
     t.string "caption", null: false
     t.string "body", null: false
-    t.string "categories", null: false
+    t.string "category", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_234737) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "email", default: "", null: false
+    t.string "role", default: "member", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
