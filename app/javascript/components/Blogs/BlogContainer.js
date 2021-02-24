@@ -2,40 +2,55 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { getBlogData } from "./Fetches/BlogData";
-import BlogTile from "./BlogTile"
+import PostTile from "./PostTile"
 
 export const BlogContainer = () => {
-  const [blog, setBlog] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [featuredPost, setFeaturedPosts] = useState({
+    id: "",
+    title: "",
+    caption: "",
+    image: ""
+  });
   const [isAdmin, setIsAdmin] = useState(false)
-  // debugger
+  
   useEffect(() => {
     getBlogData().then((body) => {
-      setBlog(body);
+      setPosts(body);
+      let lastIndex = body.length - 1
+      setFeaturedPosts({
+        id: body[lastIndex].id,
+        title: body[lastIndex].title,
+        caption: body[lastIndex].caption,
+        image: body[lastIndex].image
+      })
       if (body[0].userIsAdmin === true) {
         setIsAdmin(true)
       }
     });
   }, []);
 
-  let blogTiles = blog.map((blog) => {
+  let postTiles = posts.map((post) => {
     return (
-      <BlogTile
-        key={blog.id}
-        title={blog.title}
-        image={blog.image}
-        caption={blog.caption}
-        body={blog.body}
-        category={blog.category}
+      <PostTile
+        key={post.id}
+        title={post.title}
+        image={post.image}
+        caption={post.caption}
+        body={post.body}
+        category={post.category}
       />
     );
   });
 
+  // let featuredImage = "background-image: `url(${Background})`"
+
   return (
     <div>
       <section className="hero is-medium is-link">
-        <div className="hero-body">
-          <p className="title">Medium hero</p>
-          <p className="subtitle">Medium subtitle</p>
+        <div className="hero-body featured-image" style={{ backgroundImage: `url(${featuredPost.image})` }}>
+          <p className="title">{featuredPost.title}</p>
+          <p className="subtitle">{featuredPost.caption}</p>
         </div>
       </section>
       <div className="container">
@@ -49,7 +64,9 @@ export const BlogContainer = () => {
             </Link>
           </div>
         )}
-        {blogTiles}
+        <div className="blog-flex">
+          {postTiles}
+        </div>
       </div>
     </div>
   );

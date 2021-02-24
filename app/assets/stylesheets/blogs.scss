@@ -5,3 +5,18 @@
   margin-top: 2em;
   padding: 2em;
 }
+
+.blog-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2em;
+  padding: 2em;
+}
+
+.featured-image {
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

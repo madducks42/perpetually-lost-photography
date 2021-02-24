@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BlogTile = (props) => {
+export const PostTile = (props) => {
 
   return (
     <div className="container">
@@ -24,4 +24,4 @@ export const BlogTile = (props) => {
   );
 };
 
-export default BlogTile;
+export default PostTile;
