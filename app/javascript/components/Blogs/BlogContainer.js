@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { getBlogData } from "./Fetches/BlogData";
 import BlogTile from "./BlogTile"
 
 export const BlogContainer = () => {
   const [blog, setBlog] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false)
   // debugger
   useEffect(() => {
     getBlogData().then((body) => {
       setBlog(body);
+      if (body[0].userIsAdmin === true) {
+        setIsAdmin(true)
+      }
     });
   }, []);
 
@@ -34,6 +39,16 @@ export const BlogContainer = () => {
         </div>
       </section>
       <div className="container">
+        {isAdmin === true && (
+          <div className="blog-admin-flex">
+            <Link
+              className="button mr-2"
+              to="/blogs/new"
+            >
+              New Blog Post
+            </Link>
+          </div>
+        )}
         {blogTiles}
       </div>
     </div>
