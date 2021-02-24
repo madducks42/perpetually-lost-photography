@@ -14,5 +14,6 @@
 //= require activestorage
 //= require jquery
 //= require lightbox
+//= require jquery_ujs
 //= require navmenu
 //= require_tree .

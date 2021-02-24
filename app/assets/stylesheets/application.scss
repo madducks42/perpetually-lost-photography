@@ -45,21 +45,21 @@ $size-7: 1.1rem;
 // Button Overrides
 $button-text-color:#f7f9fb;
 $button-color:#f7f9fb;
-$button-background-color: #0077b6;
-$button-border-color: #0077b6;
+$button-background-color: #102e5a;
+$button-border-color: #102e5a;
 
 // Button Active/Focus Overrides
 $button-hover-color: #f7f9fb;
 $button-focus-color: #f7f9fb;
-$button-focus-border-color: #0077b6;
+$button-focus-border-color: #102e5a;
 $button-focus-box-shadow-size: 0 0 0 0em;
 
 // Button Hover Overrides
-$button-hover-border-color: #ea3546;
+$button-hover-border-color: #4f83a5;
 $button-text-hover-color:#f7f9fb;
 
 // Link Overrides
-$link: #0077b6;
-$link-hover:  #ea3546;
+$link: #102e5a;
+$link-hover:  #4f83a5;
 
 @import "bulma";

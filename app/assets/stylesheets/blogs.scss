@@ -1,0 +1,29 @@
+.blog-admin-flex {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2em;
+  padding: 2em;
+}
+
+.blog-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2em;
+  padding: 2em;
+}
+
+.featured-image {
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.featured-flex {
+  background-color: rgba(16, 46, 90, .8);
+  width: fit-content;
+  border-radius: 20px;
+  padding: 3em;
+}
