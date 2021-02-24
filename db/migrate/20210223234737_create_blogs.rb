@@ -6,6 +6,8 @@ class CreateBlogs < ActiveRecord::Migration[6.1]
       t.string :body,       null: false
       t.string :categories, null: false
 
+      t.belongs_to :user,        null: false
+
       t.timestamps
     end
   end
