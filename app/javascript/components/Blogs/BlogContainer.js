@@ -49,8 +49,10 @@ export const BlogContainer = () => {
     <div>
       <section className="hero is-medium is-link">
         <div className="hero-body featured-image" style={{ backgroundImage: `url(${featuredPost.image})` }}>
-          <p className="title">{featuredPost.title}</p>
-          <p className="subtitle">{featuredPost.caption}</p>
+          <div className="featured-flex">
+            <p className="title">{featuredPost.title}</p>
+            <p className="subtitle">{featuredPost.caption}</p>
+          </div>
         </div>
       </section>
       <div className="container">
