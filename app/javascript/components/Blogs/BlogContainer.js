@@ -5,7 +5,7 @@ import BlogTile from "./BlogTile"
 
 export const BlogContainer = () => {
   const [blog, setBlog] = useState([]);
-
+  // debugger
   useEffect(() => {
     getBlogData().then((body) => {
       setBlog(body);

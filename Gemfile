@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bulma-rails", "~> 0.8.0"
 gem 'jquery-rails', '~> 4.4'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'active_model_serializers'

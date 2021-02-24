@@ -3,7 +3,7 @@ class Api::V1::BlogsController < ApiController
 
   # INDEX /blogs
   def index
-    render json: Blog.all
+    render json: Blog.all, each_serializer: BlogSerializer
   end
   
   
