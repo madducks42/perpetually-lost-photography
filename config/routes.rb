@@ -12,10 +12,11 @@ Rails.application.routes.draw do
 
   get '/blog', to: 'homepages#index'
   get '/blog/:id', to: 'homepages#index'
+  get '/blog/new', to: 'homepages#index'
 
   namespace :api do
     namespace :v1 do
-      resources :blogs, only: [:index, :show, :edit, :update, :destroy]
+      resources :blogs, only: [:index, :show, :create, :edit, :update, :destroy]
     end
   end
 end

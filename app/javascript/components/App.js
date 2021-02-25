@@ -7,6 +7,7 @@ import NationalParks from "./Galleries/NationalParks";
 import Northeast from "./Galleries/Northeast";
 import BlogContainer from "./Blogs/BlogContainer";
 import PostShow from "./Blogs/PostShow";
+import NewPostForm from "./Blogs/NewPostForm"
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
         <Route exact path="/national-parks" component={NationalParks} />
         <Route exact path="/northeast" component={Northeast} />
         <Route exact path="/blog" component={BlogContainer} />
+        <Route exact path="/blog/new" component={NewPostForm} />
         <Route exact path="/blog/:id" component={PostShow} />
       </Switch>
     </BrowserRouter>

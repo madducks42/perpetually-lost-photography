@@ -44,14 +44,14 @@ export const BlogContainer = () => {
     );
   });
 
-  // let featuredImage = "background-image: `url(${Background})`"
-
   return (
     <div>
       <section className="hero is-medium is-link">
         <div className="hero-body featured-image" style={{ backgroundImage: `url(${featuredPost.image})` }}>
           <div className="featured-flex">
-            <p className="title">{featuredPost.title}</p>
+            <p className="title">
+              <Link className="font-red" to={`/blog/${featuredPost.id}`}>{featuredPost.title}</Link>
+            </p>
             <p className="subtitle">{featuredPost.caption}</p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export const BlogContainer = () => {
           <div className="blog-admin-flex">
             <Link
               className="button mr-2"
-              to="/blogs/new"
+              to="/blog/new"
             >
               New Blog Post
             </Link>

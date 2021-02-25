@@ -16,10 +16,10 @@ export const PostTile = (props) => {
         </div>
         <div className="card-content">
           <div className="content">
-          <p className="card-title">
-                <Link className="font-red" to={`/blog/${props.id}`}>{props.title}</Link>
-              </p>
-              <p className="subtitle is-6">{props.caption}</p>
+            <p className="card-title">
+              <Link className="font-red" to={`/blog/${props.id}`}>{props.title}</Link>
+            </p>
+            <p className="subtitle is-6">{props.caption}</p>
           </div>
         </div>
       </div>
