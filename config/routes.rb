@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/costa-rica', to: 'homepages#index'
   get '/national-parks', to: 'homepages#index'
   get '/northeast', to: 'homepages#index'
+
   get '/blog', to: 'homepages#index'
+  get '/blog/:id', to: 'homepages#index'
 
   namespace :api do
     namespace :v1 do

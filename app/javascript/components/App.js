@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-import Home from "./Home/Home"
-import CostaRica from "./Galleries/CostaRica"
-import NationalParks from "./Galleries/NationalParks"
-import Northeast from "./Galleries/Northeast"
-import BlogContainer from "./Blogs/BlogContainer"
+import Home from "./Home/Home";
+import CostaRica from "./Galleries/CostaRica";
+import NationalParks from "./Galleries/NationalParks";
+import Northeast from "./Galleries/Northeast";
+import BlogContainer from "./Blogs/BlogContainer";
+import PostShow from "./Blogs/PostShow";
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
         <Route exact path="/national-parks" component={NationalParks} />
         <Route exact path="/northeast" component={Northeast} />
         <Route exact path="/blog" component={BlogContainer} />
+        <Route exact path="/blog/:id" component={PostShow} />
       </Switch>
     </BrowserRouter>
   );

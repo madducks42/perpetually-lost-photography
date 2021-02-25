@@ -34,6 +34,7 @@ export const BlogContainer = () => {
     return (
       <PostTile
         key={post.id}
+        id={post.id}
         title={post.title}
         image={post.image}
         caption={post.caption}
