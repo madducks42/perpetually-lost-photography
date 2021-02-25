@@ -61,7 +61,7 @@ export const BlogContainer = () => {
           <div className="blog-admin-flex">
             <Link
               className="button mr-2"
-              to="/blogs/new"
+              to="/blog/new"
             >
               New Blog Post
             </Link>
