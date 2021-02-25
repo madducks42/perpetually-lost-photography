@@ -5,6 +5,11 @@ class Api::V1::BlogsController < ApiController
   def index
     render json: Blog.all, each_serializer: BlogSerializer
   end
+
+  # SHOW /blogs/1
+  def show
+    render json: Blog.find(params[:id]), serializer: BlogShowSerializer
+  end
   
   
 

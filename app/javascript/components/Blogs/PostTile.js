@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const PostTile = (props) => {
 
@@ -15,8 +16,10 @@ export const PostTile = (props) => {
         </div>
         <div className="card-content">
           <div className="content">
-            <h6 className="is-size-6">{props.title}</h6>
-            <p className="is-size-7">{props.caption}</p>
+          <p className="card-title">
+                <Link className="font-red" to={`/blog/${props.id}`}>{props.title}</Link>
+              </p>
+              <p className="subtitle is-6">{props.caption}</p>
           </div>
         </div>
       </div>
