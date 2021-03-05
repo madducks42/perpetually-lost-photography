@@ -8,6 +8,7 @@ import Northeast from "./Galleries/Northeast";
 import BlogContainer from "./Blogs/BlogContainer";
 import PostShow from "./Blogs/PostShow";
 import NewPostForm from "./Blogs/NewPostForm"
+import UpdatePostForm from "./Blogs/UpdatePostForm"
 
 export const App = () => {
   return (
@@ -20,6 +21,11 @@ export const App = () => {
         <Route exact path="/blog" component={BlogContainer} />
         <Route exact path="/blog/new" component={NewPostForm} />
         <Route exact path="/blog/:id" component={PostShow} />
+        <Route
+          exact
+          path="/blog/:id/update"
+          component={UpdatePostForm}
+        />
       </Switch>
     </BrowserRouter>
   );

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/blog', to: 'homepages#index'
   get '/blog/:id', to: 'homepages#index'
   get '/blog/new', to: 'homepages#index'
+  get '/blog/:id/update', to: 'homepages#authenticated'
+  get '/blog/:id/destroy', to: 'homepages#authenticated'
 
   namespace :api do
     namespace :v1 do
