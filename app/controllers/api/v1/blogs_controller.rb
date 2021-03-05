@@ -13,7 +13,7 @@ class Api::V1::BlogsController < ApiController
 
   # CREATE /blogs/new
   def create
-    post = Blog.new(blog_params)
+    post = Blog.new(post_params)
     post.user = current_user
 
     if post.save
@@ -23,10 +23,21 @@ class Api::V1::BlogsController < ApiController
     end 
 
   end
+
+  def update
+    post = Blog.find(params[:id])
+
+    if post.update(post_params)
+      render json: post
+    else
+      render json: { errors: post.errors.full_messages }
+    end 
+    
+  end
   
   protected
 
-  def blog_params
+  def post_params
     params.require(:blog).permit([:title, :caption, :body, :image, :category])
   end
 

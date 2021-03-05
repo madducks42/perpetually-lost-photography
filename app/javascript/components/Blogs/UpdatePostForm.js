@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 
 import ErrorList from "../Utilities/ErrorList";
-// import { Link } from "react-router-dom";
 
-export const NewPostForm = () => {
+const UpdatePostForm = (props) => {
   let defaultFields = {
     title: "",
     caption: "",
@@ -14,17 +13,32 @@ export const NewPostForm = () => {
     category: "",
   };
 
-  const [newPost, setNewPost] = useState(defaultFields);
+  const [updatedPost, setUpdatedPost] = useState(defaultFields);
   const [errors, setErrors] = useState({});
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
-  if (shouldRedirect) {
-    return <Redirect to="/blog" />;
-  }
+  useEffect(() => {
+    let id = props.match.params.id;
+    fetch(`/api/v1/blogs/${id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((body) => {
+        setUpdatedPost(body);
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
+  }, []);
 
-  const addNewPost = (formData) => {
-    fetch("/api/v1/blogs", {
-      method: "POST",
+  const updatePost = (formData) => {
+    let id = props.match.params.id;
+    fetch(`/api/v1/blogs/${id}`, {
+      method: "PATCH",
       body: JSON.stringify(formData),
       credentials: "same-origin",
       headers: {
@@ -46,15 +60,15 @@ export const NewPostForm = () => {
         if (body.errors) {
           setErrors(body.errors);
         } else {
-          setShouldRedirect(true);
+          setShouldRedirect(body.id);
         }
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   };
 
   const handleChange = (event) => {
-    setNewPost({
-      ...newPost,
+    setUpdatedPost({
+      ...updatedPost,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   };
@@ -64,10 +78,10 @@ export const NewPostForm = () => {
     const requiredFields = ["title", "caption", "body", "image"];
     requiredFields.forEach((field) => {
       if (
-        newPost[field].trim() === "" ||
-        newPost[field].trim() === "" ||
-        newPost[field].trim() === "" ||
-        newPost[field].trim() === ""
+        updatedPost[field].trim() === "" ||
+        updatedPost[field].trim() === "" ||
+        updatedPost[field].trim() === "" ||
+        updatedPost[field].trim() === ""
       ) {
         submitErrors = {
           ...submitErrors,
@@ -83,10 +97,13 @@ export const NewPostForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validForSubmission()) {
-      addNewPost(newPost);
-      setNewPost(defaultFields);
+      updatePost(updatedPost);
     }
   };
+
+  if (shouldRedirect) {
+    return <Redirect to={`/blog/${props.match.params.id}`} />;
+  }
 
   return (
     <div className="container">
@@ -107,7 +124,7 @@ export const NewPostForm = () => {
                     id="title"
                     type="text"
                     onChange={handleChange}
-                    value={newPost.title}
+                    value={updatedPost.title}
                     className="input"
                   />
                 </div>
@@ -124,7 +141,7 @@ export const NewPostForm = () => {
                     type="text"
                     className="textarea"
                     onChange={handleChange}
-                    value={newPost.caption}
+                    value={updatedPost.caption}
                   ></textarea>
                 </div>
               </label>
@@ -140,7 +157,7 @@ export const NewPostForm = () => {
                     type="text"
                     className="textarea"
                     onChange={handleChange}
-                    value={newPost.body}
+                    value={updatedPost.body}
                   ></textarea>
                 </div>
               </label>
@@ -155,7 +172,7 @@ export const NewPostForm = () => {
                     id="image"
                     type="text"
                     onChange={handleChange}
-                    value={newPost.image}
+                    value={updatedPost.image}
                     className="input"
                   />
                 </div>
@@ -167,7 +184,7 @@ export const NewPostForm = () => {
                 <span className="select">
                   <select
                     name="category"
-                    value={newPost.category}
+                    value={updatedPost.category}
                     onChange={handleChange}
                     onBlur={handleChange}
                   >
@@ -194,4 +211,4 @@ export const NewPostForm = () => {
   );
 };
 
-export default NewPostForm;
+export default UpdatePostForm;
