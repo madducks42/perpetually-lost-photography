@@ -31,7 +31,15 @@ class Api::V1::BlogsController < ApiController
       render json: post
     else
       render json: { errors: post.errors.full_messages }
-    end 
+    end
+  end
+
+  def destroy
+    post = Blog.find(params[:id])
+  
+    if post.destroy
+      render json: {destroyed: true}
+    end
     
   end
   

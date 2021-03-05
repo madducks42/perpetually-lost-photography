@@ -9,6 +9,7 @@ import BlogContainer from "./Blogs/BlogContainer";
 import PostShow from "./Blogs/PostShow";
 import NewPostForm from "./Blogs/NewPostForm"
 import UpdatePostForm from "./Blogs/UpdatePostForm"
+import DeletePost from "./Blogs/DeletePost"
 
 export const App = () => {
   return (
@@ -25,6 +26,11 @@ export const App = () => {
           exact
           path="/blog/:id/update"
           component={UpdatePostForm}
+        />
+        <Route
+          exact
+          path="/blog/:id/delete"
+          component={DeletePost}
         />
       </Switch>
     </BrowserRouter>

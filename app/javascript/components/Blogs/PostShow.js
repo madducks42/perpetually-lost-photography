@@ -39,17 +39,17 @@ export const PostShow = (props) => {
       {isAdmin === true && (
           <div className="columns admin-flex">
             <Link
-              className="admin-link"
+              className="button"
               to={`/blog/${id}/update`}
             >
               Update Post
             </Link>
-            {/* <Link
-              className="admin-link"
-              to={`/blog/${id}/destroy`}
+            <Link
+              className="button ml-2"
+              to={`/blog/${id}/delete`}
             >
               Delete Post
-            </Link> */}
+            </Link>
           </div>
         )}
     </div>
