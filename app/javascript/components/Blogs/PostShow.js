@@ -35,7 +35,7 @@ export const PostShow = (props) => {
   return (
     <div className="container mt-6 p-md">
       <h1 className="is-size-1">{post.title}</h1>
-      <p className="is-size-7">{post.body}</p>
+      <div className="is-size-7 paragraph-format">{post.body}</div>
       {isAdmin === true && (
           <div className="columns admin-flex">
             <Link
