@@ -5,6 +5,7 @@ class BlogShowSerializer < ActiveModel::Serializer
               :caption,
               :body,
               :category,
+              :dateCreated,
               :userSignedIn,
               :userIsAdmin
 
@@ -26,6 +27,10 @@ class BlogShowSerializer < ActiveModel::Serializer
         return false
       end
     end
+  end
+
+  def dateCreated
+    object.created_at.strftime('%B %Y')
   end
 
 
