@@ -70,7 +70,9 @@
     <footer class="has-text-centered footer">
       <h4 class="is-size-4">&copy; Perpetually Lost Photography</h4>
       <%- if current_user -%>
-        <%= link_to 'Admin Logout', destroy_user_session_path, method: :delete, class: 'footer-item' %>
+        <%= link_to 'Admin Profile ', edit_user_registration_path, class: 'footer-item' %>
+        | 
+        <%= link_to ' Admin Logout', destroy_user_session_path, method: :delete, class: 'footer-item' %>
       <%- end -%>
     </footer>
     
