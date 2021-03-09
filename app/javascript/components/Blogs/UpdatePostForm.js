@@ -108,7 +108,7 @@ const UpdatePostForm = (props) => {
   return (
     <div className="container">
       <h3 className="has-text-centered is-size-3 font-blue mt-6 has-text-weight-semibold">
-        Add New Post
+        Update Post
       </h3>
       <div className="columns">
         <div className="column">
@@ -205,6 +205,17 @@ const UpdatePostForm = (props) => {
               </div>
             </div>
           </form>
+          <div className="flex-column mb-6">
+            <h5 className="is-size-5">To add an image:</h5>
+            <pre>
+              <code>
+              &lt;img src=&quot;&quot; &gt;<br/>
+              &lt;h6 class=&quot;image-caption&quot;&gt;
+                  Add image caption
+                  &lt;/h6&gt;
+              </code>
+            </pre>
+          </div>
         </div>
       </div>
     </div>

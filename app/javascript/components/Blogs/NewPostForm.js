@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import _ from "lodash";
 
 import ErrorList from "../Utilities/ErrorList";
-// import { Link } from "react-router-dom";
 
 export const NewPostForm = () => {
   let defaultFields = {
@@ -188,6 +187,17 @@ export const NewPostForm = () => {
               </div>
             </div>
           </form>
+          <div className="flex-column mb-6">
+            <h5 className="is-size-5">To add an image:</h5>
+            <pre>
+              <code>
+              &lt;img src=&quot;&quot; &gt;<br/>
+              &lt;h6 class=&quot;image-caption&quot;&gt;
+                  Add image caption
+                  &lt;/h6&gt;
+              </code>
+            </pre>
+          </div>
         </div>
       </div>
     </div>

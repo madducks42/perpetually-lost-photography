@@ -11,6 +11,7 @@ export const PostShow = (props) => {
     body: "",
     image: "",
     category: "",
+    createdDate: ""
   });
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -25,6 +26,7 @@ export const PostShow = (props) => {
         body: body.body,
         image: body.image,
         category: body.category,
+        createdDate: body.dateCreated
       });
       if (body.userIsAdmin === true) {
         setIsAdmin(true);
@@ -33,25 +35,32 @@ export const PostShow = (props) => {
   }, []);
 
   return (
-    <div className="container mt-6 p-md">
-      <h1 className="is-size-1">{post.title}</h1>
-      <div className="is-size-7 paragraph-format">{post.body}</div>
-      {isAdmin === true && (
-          <div className="columns admin-flex">
-            <Link
-              className="button"
-              to={`/blog/${id}/update`}
-            >
-              Update Post
-            </Link>
-            <Link
-              className="button ml-2"
-              to={`/blog/${id}/delete`}
-            >
-              Delete Post
-            </Link>
+    <div>
+      <section className="hero is-large is-info">
+        <div
+          className="hero-body featured-image"
+          style={{ backgroundImage: `url(${post.image})` }}
+        >
+          <div className="post-flex">
+            <h1 className="is-size-1 title">{post.title}</h1>
+            <p className="subtitle">Posted {post.createdDate}</p>
           </div>
-        )}
+        </div>
+      </section>
+      <div
+        className="container mt-6 p-md"
+        dangerouslySetInnerHTML={{ __html: post.body }}
+      />
+      {isAdmin === true && (
+        <div className="columns blog-admin-flex">
+          <Link className="button" to={`/blog/${id}/update`}>
+            Update Post
+          </Link>
+          <Link className="button ml-2" to={`/blog/${id}/delete`}>
+            Delete Post
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

@@ -23,7 +23,7 @@
 
 .featured-flex {
   background-color: rgba(16, 46, 90, .8);
-  width: fit-content;
+  max-width: 40%;
   border-radius: 20px;
   padding: 3em;
 }
@@ -34,6 +34,14 @@
   margin-bottom: 2em;
 }
 
-.paragraph-format {
-  white-space: pre-wrap;
+.post-flex {
+  background-color: rgba(16, 46, 90, .8);
+  width: fit-content;
+  border-radius: 20px;
+  padding: 3em;
+}
+
+.image-caption {
+  text-align: center;
+  margin-bottom: 10px;
 }
