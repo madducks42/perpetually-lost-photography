@@ -1,14 +1,39 @@
 // Homepage Style
 
 .landing-image {
-  background-image: url("https://perpetually-lost-prod.s3.amazonaws.com/landing_image.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   background-color: #999;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .profile-image {
-  max-height: 600px;
+  border: 2px solid #101419;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 641px){
+  .landing-image {
+    background-image: url("https://perpetually-lost-prod.s3.amazonaws.com/landing_image.jpg");
+  }
+  
+  .profile-image {
+    max-height: 600px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .landing-image {
+    background-image: url("https://perpetually-lost-prod.s3.amazonaws.com/landing-image-mobile.jpg");
+  }
+  
+  .profile-image {
+    display: none;
+  }
+
+  .text-mobile {
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 10px;
+  }
 }
